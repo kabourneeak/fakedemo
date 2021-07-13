@@ -1,0 +1,11 @@
+{
+    "build": {
+        "dockerfile": "Dockerfile",
+        "target": "dev-env"
+    },
+    "extensions": [
+        "ms-dotnettools.csharp",
+        "ionide.ionide-fsharp"
+    ],
+    "remoteUser": "docker"
+}

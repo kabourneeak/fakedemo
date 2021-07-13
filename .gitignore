@@ -1,0 +1,10 @@
+### Build output ###
+
+build/
+publish/
+.fake/
+
+### DotnetCore ###
+# .NET Core build folders
+bin/
+obj/
