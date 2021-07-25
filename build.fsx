@@ -16,12 +16,27 @@ let publishDir = "./pubish/"
 // Targets
 Target.create "Clean" (fun _ ->
   Trace.log " --- Cleaning --- "
+
+  CreateProcess.fromRawCommand "dotnet" [ "clean" ]
+  |> Proc.run
+  |> ignore
+
   Shell.cleanDirs [buildDir; publishDir]
 )
 
 Target.create "Build" (fun _ ->
   Trace.log " --- Building --- "
-  DotNet.build
+
+  let buildParams (defaults:DotNet.BuildOptions) =
+    { defaults with
+        OutputPath = Some(buildDir)
+    }
+
+  DotNet.build buildParams "./Demo.sln"
+
+  //CreateProcess.fromRawCommand "dotnet" [ "build" ]
+  //|> Proc.run
+  //|> ignore
 )
 
 Target.create "Default" (fun _ ->

@@ -8,3 +8,6 @@ publish/
 # .NET Core build folders
 bin/
 obj/
+
+### Ionide ###
+.ionide

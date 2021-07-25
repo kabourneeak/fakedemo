@@ -17,6 +17,22 @@ To build this project, you need the following:
 
 ## Build
 
+### Use the Fake script
+
+Execute the following command to build the project
+
+```sh
+fake run
+```
+
+The first time you run this, `fake` will download dependencies listed in the `build.fsx` script. If you modify the script in a way that changes the dependencies, then you need to delete the `build.fsx.lock` file and execute `fake run` to regenerate the Intellisense.
+
+https://stackoverflow.com/questions/66665009/fix-for-package-manager-key-paket-was-not-registered-in-build-fsx
+
+[Paver](https://github.com/paver/paver/)
+[Invoke](http://docs.pyinvoke.org/en/latest/)
+
+
 ## Creating the project
 
 ```
